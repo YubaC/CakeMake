@@ -1,6 +1,6 @@
 # Makefile for cake
 CC = gcc
-CFLAGS = -Wall -Wno-main
+CFLAGS = -Wall -Wno-main -Wno-shift-op-parentheses
 
 OBJS = milk.o sugar.o eggs.o cake.o
 TARGET = cake
@@ -18,17 +18,17 @@ $(TARGET): $(OBJS)
 
 milk.o: milk.c
 	@echo "[BUILD] pouring_milk..."
-	$(CC) $(CFLAGS) -c milk.c -o milk.o
+	$(CC) -c milk.c -o milk.o
 	@sleep 0.3
 
 sugar.o: sugar.c
 	@echo "[BUILD] whisking_sugar..."
-	$(CC) $(CFLAGS) -c sugar.c -o sugar.o
+	$(CC) -c sugar.c -o sugar.o
 	@sleep 1
 
 eggs.o: eggs.c
 	@echo "[BUILD] cracking_eggs..."
-	$(CC) $(CFLAGS) -c eggs.c -o eggs.o
+	$(CC) -c eggs.c -o eggs.o
 	@sleep 0.3
 
 cake.o: cake.c
