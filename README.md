@@ -1,22 +1,36 @@
-# 🎉 CakeMake
+# 🎂 CakeMake
 
-**HAPPY BIRTHDAY!** 🎂
+> _CMake_ — except here it means _C cake make_.
 
-We've prepared a cake for you! But following the great tradition of C programmers, you'll need to `make` it yourself. Follow the build instructions above to get your freshly baked cake of the day - no calories included, we promise!
+A deliberately obfuscated 255-byte C program that bakes a small birthday cake
+out of ASCII art. The middle of the cake is iced with the date the program was
+compiled (via the standard `__DATE__` macro) and the bottom band carries a
+message compiled in with `-DM=...`. No string literal appears anywhere in the
+source.
 
-# Requirements
+This is my entry for the 29th International Obfuscated C Code Contest
+(IOCCC29, 2025).
 
-- make
-- gcc
+## Build & run
 
-## Build and Run Instructions
+```sh
+make
+./prog
+```
 
-1. Clone or download this repository to your local machine.
-2. Open a terminal and navigate to the project’s root directory.
-3. Execute the following commands to bake the cake yourself:
-    ```bash
-    make cake
-    ./cake
-    ```
+To put a different message on the cake:
 
-The cake is a lie, but the love we share is not. **Enjoy your special day!** 🥳
+```sh
+cc -DM="\"HAPPY BIRTHDAY ALICE\"" prog.c -o prog
+```
+
+`M` is required — without it the program will not compile. The Makefile
+supplies a default through the `MESSAGE` variable.
+
+## Full write-up
+
+The complete write-up lives in [`remarks.md`](remarks.md): the overview, the
+output layout, the `M` macro, the obfuscation and implementation notes, the
+deliberately chosen 255-byte size, and the story behind the name.
+
+And yes — run `./prog` before reading the source. The surprise is the point.

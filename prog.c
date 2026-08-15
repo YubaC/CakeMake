@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(int d){d^210&&main(-~d);static int t;int w=d+d*16+17>>9,m=d-w*30-15,y=(m^(m>>31))-(m>>31)+(11370496>>3*-~w&7);putchar(d-w*30?y-14||65>>(w)&1?y>14?32:w%3?*((w&4?__DATE__:M)+t++)?:(t^=t,32):((char*)&(int){6892864})[w/3]:124:10);}
